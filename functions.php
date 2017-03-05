@@ -372,4 +372,91 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
+/**
+ * Change the add to cart text on single product pages
+ */
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );  
+function woo_custom_cart_button_text() {
+    return __( 'Select package', 'woocommerce' );
+}
+
+/**
+ * Change the add to cart text on product archives
+ */
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );
+function woo_archive_custom_cart_button_text() {
+	return __( 'Select package', 'woocommerce' );
+}
+
+/**
+ * Remove product tabs
+ *
+ */
+function woo_remove_product_tab($tabs) {
+
+    unset( $tabs['description'] );      		// Remove the description tab
+    unset( $tabs['reviews'] ); 					// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+ 	return $tabs;
+ 
+}
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tab', 98);
+
+/*
+ * wc_remove_related_products
+ * 
+ * Clear the query arguments for related products so none show.
+ * Add this code to your theme functions.php file.  
+ */
+function wc_remove_related_products( $args ) {
+	return array();
+}
+add_filter('woocommerce_related_products_args','wc_remove_related_products', 10); 
+
+
+function woo_custom_add_to_cart( $cart_item_data ) {
+
+    global $woocommerce;
+    $woocommerce->cart->empty_cart();
+
+    // Do nothing with the data and return
+    return $cart_item_data;
+}
+add_filter( 'woocommerce_add_cart_item_data', 'woo_custom_add_to_cart' );
+
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ *
+ * Add payment method to admin new order email
+ *
+ */
+add_action( 'woocommerce_email_after_order_table', 'woo_add_payment_method_to_admin_new_order', 15, 2 ); 
+
+function woo_add_payment_method_to_admin_new_order( $order, $is_admin_email ) { 
+	if ( $is_admin_email ) { 
+	echo '<p><strong>Payment Method:</strong> ' . $order->payment_method_title . '</p>'; 
+	} 
+}
+
+function your_add_to_cart_message() {
+
+	if ( get_option( 'woocommerce_cart_redirect_after_add' ) == 'yes' ) :
+		$message = sprintf( '%s<a href="%s">%s</a>', 
+			__( 'You have selected a package', 'woocommerce' ), 
+			esc_url( get_permalink( woocommerce_get_page_id( 'shop' ) ) ), 
+			__( '', 'woocommerce' ) 
+		);
+	else :
+	    $message = sprintf( '%s<a href="%s">%s</a>',
+			__( 'You have selected a package' , 'woocommerce' ),
+			esc_url( get_permalink( woocommerce_get_page_id( 'cart' ) ) ),
+			__( '', 'woocommerce' ) 
+		);
+	endif;
+	return $message;
+}
+add_filter( 'wc_add_to_cart_message', 'your_add_to_cart_message' );
+
 ?>
