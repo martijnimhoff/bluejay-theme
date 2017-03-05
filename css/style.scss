@@ -642,16 +642,38 @@ header {
 main {
 	padding-top: 100px;
 
-	h2 {
+	h1 {
+		font-weight: bold;
+	}
+
+	h1, h2 {
 		text-align: center;
 		font-size: 36px;
 		color: $blue;
 		text-transform: uppercase;
 	}
 
+	h3, h4, h5, h6 {
+		text-transform: uppercase;
+	}
+
 	h3 {
 		font-size: 24px;
-		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	h4 {
+		font-size: 24px;
+		font-weight: 300;
+	}
+
+	h5 {
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	h6 {
+		font-size: 16px;
 		font-weight: 300;
 	}
 
@@ -848,8 +870,11 @@ main {
 
 		img.aligncenter {
 			margin:0 auto;
-			width: 50%;
     		display: block;
+		}
+
+		ul {
+			margin: 0 0 25px 25px;
 		}
 
 	} /* End content */
@@ -1463,5 +1488,16 @@ footer {
 				text-decoration: underline;
 			}		
 		}
+	}
+}
+
+
+/**
+ * Woocommerce styles
+ * 
+ */
+.woocommerce {
+	.quantity {
+		display: none;
 	}
 }
