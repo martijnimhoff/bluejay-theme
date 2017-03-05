@@ -51,7 +51,7 @@
 
 		<header id="header">
 			<div class="container"> 
-				<a href="../" class="navbar-brand">
+				<a href="<?php echo get_site_url() ?>" class="navbar-brand">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="" class="logo"/>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-onblack.svg" alt="" class="logo-negative"/>
 				</a>
