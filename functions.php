@@ -324,7 +324,6 @@ function create_post_type() {
 	);
 }
 
-
 function get_partners($id, $classes, $excerpt) {
 
 	$args = array(
@@ -362,6 +361,15 @@ function get_partners($id, $classes, $excerpt) {
 		endforeach;
 		wp_reset_postdata();
 	}
+}
+
+/**
+ * Confirm Woocommerce theme support
+ *
+ */
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
 }
 
 ?>
