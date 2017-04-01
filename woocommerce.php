@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full width page
+ * Template Name: Woocommerce page
  *
  * @package WordPress
  * @subpackage Blue Jay

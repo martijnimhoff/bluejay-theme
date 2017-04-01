@@ -324,7 +324,7 @@ function create_post_type() {
 	);
 }
 
-function get_partners($id, $classes, $excerpt) {
+function get_partners($id, $classes, $excerpt, $link = true) {
 
 	$args = array(
 		'post_type' => 'partners',
@@ -345,7 +345,8 @@ function get_partners($id, $classes, $excerpt) {
 			<?php } 
 			*/
 			?>
-			<a href="<?php echo get_permalink($post->ID); ?>" class="partner <?= $classes ?>">	
+
+			<a href="<?= $link ? get_permalink($post->ID) : 'javaScript:void(0);' ?>" class="partner <?= $classes ?>">	
 				<div class="partner-content">
 					<?php 
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); 
@@ -414,7 +415,9 @@ function wc_remove_related_products( $args ) {
 }
 add_filter('woocommerce_related_products_args','wc_remove_related_products', 10); 
 
-
+/*
+ * delete all old items in the cart when adding a new item
+ */
 function woo_custom_add_to_cart( $cart_item_data ) {
 
     global $woocommerce;

@@ -79,6 +79,20 @@
 					get_partners(17, 'col-md-2 col-sm-3 col-xs-6', false);
 				?>	
 		</div>
+
+
+
+		<div class="partners-crowd">
+			<div class="container">
+				<h2>our <span>supporters</span></h2>
+				<hr>
+			</div>
+
+			<div class="container masonry">
+				<?php
+					get_partners(25, 'col-md-2 col-sm-3 col-xs-6', false, false);
+				?>	
+		</div>
 	</div>
 
 <?php get_footer(); ?>

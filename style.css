@@ -434,33 +434,33 @@ a {
 /*
  * Nav Bar styles
  */
-header {
+header#header {
   background: #fff;
   max-width: 100%;
   width: 100%;
   height: 100px;
   z-index: 99;
   position: absolute; }
-  header .logo-negative {
+  header#header .logo-negative {
     display: none; }
-  header .logo {
+  header#header .logo {
     position: relative;
     z-index: 199; }
-  header * {
+  header#header * {
     z-index: 110; }
-  header .navbar-brand {
+  header#header .navbar-brand {
     width: 145px;
     z-index: 110;
     position: relative; }
-  header:not(.scroll) .navbar-brand {
+  header#header:not(.scroll) .navbar-brand {
     padding-top: 18px; }
   @media (min-width: 768px) {
-    header .nav {
+    header#header .nav {
       float: right; }
-      header .nav > li {
+      header#header .nav > li {
         margin-top: 25px;
         float: left; }
-        header .nav > li > a {
+        header#header .nav > li > a {
           margin: 5px 15px;
           padding: 8px 0;
           font-size: 18px;
@@ -468,13 +468,13 @@ header {
           border-bottom: 3px solid #009ADD;
           color: #111111;
           transition: 0.1s ease-out; }
-          header .nav > li > a:hover, header .nav > li > a:active, header .nav > li > a:focus, header .nav > li > a .active {
+          header#header .nav > li > a:hover, header#header .nav > li > a:active, header#header .nav > li > a:focus, header#header .nav > li > a .active {
             background: none;
             border-bottom: 8px solid #009ADD; } }
-  header input[type="checkbox"], header label {
+  header#header input[type="checkbox"], header#header label {
     display: none; }
   @media (max-width: 768px) {
-    header label {
+    header#header label {
       display: block;
       position: absolute;
       right: 0;
@@ -483,7 +483,7 @@ header {
       height: 100px;
       cursor: pointer;
       z-index: 110; }
-    header label:before, header label:after {
+    header#header label:before, header#header label:after {
       content: '';
       position: absolute;
       top: 50%;
@@ -494,23 +494,23 @@ header {
       width: 20px;
       background-color: #009ADD;
       transition: .15s ease; }
-    header label:before {
+    header#header label:before {
       margin-right: -10px;
       box-shadow: 0 -7px 0 #009ADD; }
-    header label:after {
+    header#header label:after {
       margin-left: -10px;
       box-shadow: 0 7px 0 #009ADD; }
-    header input:checked ~ label:before {
+    header#header input:checked ~ label:before {
       box-shadow: 0 0 0 transparent;
       -webkit-transform: rotate(45deg) scale(1.2);
       transform: rotate(45deg) scale(1.2); }
-    header input:checked ~ label:after {
+    header#header input:checked ~ label:after {
       box-shadow: 0 0 0 transparent;
       -webkit-transform: rotate(-45deg) scale(1.2);
       transform: rotate(-45deg) scale(1.2); }
-    header input:not(:checked) ~ nav ul {
+    header#header input:not(:checked) ~ nav ul {
       display: none !important; }
-    header #cover {
+    header#header #cover {
       display: block;
       position: fixed;
       top: 0;
@@ -519,46 +519,46 @@ header {
       bottom: 0;
       background-color: #fff;
       z-index: 98; }
-    header input:not(:checked) ~ #cover {
+    header#header input:not(:checked) ~ #cover {
       display: none; }
-    header .nav {
+    header#header .nav {
       z-index: 100;
       position: relative;
       margin-top: 100px; }
-      header .nav > li {
+      header#header .nav > li {
         margin-top: 25px; }
-        header .nav > li > a {
+        header#header .nav > li > a {
           margin: 5px 30px;
           padding: 8px 0;
           font-size: 18px;
           text-transform: uppercase;
           color: #111111;
           transition: 0.1s ease-out; }
-          header .nav > li > a:hover {
+          header#header .nav > li > a:hover {
             background: none; } }
   @media (min-width: 768px) {
-    header.scroll {
+    header#header.scroll {
       position: fixed;
       background: #353535;
       opacity: 0.95;
       box-shadow: 0 0 25px -5px #000;
       height: 70px; }
-      header.scroll .logo-negative {
+      header#header.scroll .logo-negative {
         display: block;
         width: 80px; }
-      header.scroll .logo {
+      header#header.scroll .logo {
         display: none; }
-      header.scroll label:before, header.scroll label:after {
+      header#header.scroll label:before, header#header.scroll label:after {
         background-color: #009ADD; }
-      header.scroll label:before {
+      header#header.scroll label:before {
         margin-right: -10px;
         box-shadow: 0 -7px 0 #fff; }
-      header.scroll label:after {
+      header#header.scroll label:after {
         margin-left: -10px;
         box-shadow: 0 7px 0 #fff; }
-      header.scroll .nav > li {
+      header#header.scroll .nav > li {
         margin-top: 10px; }
-        header.scroll .nav > li > a {
+        header#header.scroll .nav > li > a {
           font-size: 16px;
           padding-bottom: 6px;
           color: #fff;
@@ -574,14 +574,26 @@ main {
   /* End follow us */
   /* End testimonials */
   /* End partners */ }
-  main h2 {
+  main h1 {
+    font-weight: bold; }
+  main h1, main h2 {
     text-align: center;
     font-size: 36px;
     color: #009ADD;
     text-transform: uppercase; }
+  main h3, main h4, main h5, main h6 {
+    text-transform: uppercase; }
   main h3 {
     font-size: 24px;
-    text-transform: uppercase;
+    font-weight: bold; }
+  main h4 {
+    font-size: 24px;
+    font-weight: 300; }
+  main h5 {
+    font-size: 16px;
+    font-weight: bold; }
+  main h6 {
+    font-size: 16px;
     font-weight: 300; }
   main p {
     line-height: 24px;
@@ -703,8 +715,9 @@ main {
       max-width: 100%; }
     main .content img.aligncenter {
       margin: 0 auto;
-      width: 50%;
       display: block; }
+    main .content ul {
+      margin: 0 0 25px 25px; }
   main .team-quote {
     text-align: center;
     margin: 50px 0; }
@@ -881,14 +894,16 @@ main {
       background: #a55d2d; }
     main .partners .partners-donor {
       background: #2e71a3; }
-    main .partners .partners-platinum h2, main .partners .partners-gold h2, main .partners .partners-silver h2, main .partners .partners-bronze h2, main .partners .partners-donor h2 {
+    main .partners .partners-crowd {
+      background: #2ea362; }
+    main .partners .partners-platinum h2, main .partners .partners-gold h2, main .partners .partners-silver h2, main .partners .partners-bronze h2, main .partners .partners-donor h2, main .partners .partners-crowd h2 {
       color: #353535; }
-    main .partners .partners-platinum hr, main .partners .partners-gold hr, main .partners .partners-silver hr, main .partners .partners-bronze hr, main .partners .partners-donor hr {
+    main .partners .partners-platinum hr, main .partners .partners-gold hr, main .partners .partners-silver hr, main .partners .partners-bronze hr, main .partners .partners-donor hr, main .partners .partners-crowd hr {
       border-color: #353535; }
-    main .partners .partners-platinum a, main .partners .partners-gold a, main .partners .partners-silver a, main .partners .partners-bronze a, main .partners .partners-donor a {
+    main .partners .partners-platinum a, main .partners .partners-gold a, main .partners .partners-silver a, main .partners .partners-bronze a, main .partners .partners-donor a, main .partners .partners-crowd a {
       text-decoration: none;
       color: #353535; }
-      main .partners .partners-platinum a:hover, main .partners .partners-gold a:hover, main .partners .partners-silver a:hover, main .partners .partners-bronze a:hover, main .partners .partners-donor a:hover {
+      main .partners .partners-platinum a:hover, main .partners .partners-gold a:hover, main .partners .partners-silver a:hover, main .partners .partners-bronze a:hover, main .partners .partners-donor a:hover, main .partners .partners-crowd a:hover {
         text-decoration: none; }
     main .partners .partner-content {
       background: #fff;
@@ -904,6 +919,8 @@ main {
       main .partners .partner-content:hover {
         box-shadow: 0 2px 35px -5px #000;
         transform: scale(1.02); }
+    main .partners .partners-crowd .partner-content {
+      padding: 15px 25px; }
     main .partners .partner.no-link {
       box-sizing: border-box; }
       main .partners .partner.no-link .partner-content:hover {
@@ -1073,3 +1090,10 @@ footer {
       footer .credits a:hover {
         color: #fff;
         text-decoration: underline; }
+
+/**
+ * Woocommerce styles
+ * 
+ */
+.woocommerce .quantity {
+  display: none; }

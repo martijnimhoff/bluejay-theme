@@ -1167,8 +1167,11 @@ main {
 		.partners-donor {
 			background: $donor;
 		}
+		.partners-crowd {
+			background: #2ea362;
+		}
 
-		.partners-platinum, .partners-gold, .partners-silver, .partners-bronze, .partners-donor { 
+		.partners-platinum, .partners-gold, .partners-silver, .partners-bronze, .partners-donor, .partners-crowd { 
 			h2 {
 				color: $almostblack;	
 			}
@@ -1206,6 +1209,9 @@ main {
 				box-shadow: 0 2px 35px -5px #000;
 				transform:scale(1.02);
 			}
+		}
+		.partners-crowd .partner-content {
+			padding: 15px 25px;
 		}
 
 		.partner.no-link {
