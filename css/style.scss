@@ -496,6 +496,33 @@ header#header {
 						border-bottom: 8px solid #009ADD;
 					}
 				}
+
+				.sub-menu {
+					display:none;
+				    background: #009ADD;
+				    position: fixed;
+				    margin-left: 15px;
+				    margin-top: -5px;
+
+					li a {
+						padding: 14px 22px;
+					    color: #fff;
+					    display: block;
+					    border-bottom: 1px solid #fff;
+					    text-decoration: none;
+					    text-transform: uppercase;
+
+					    transition: 0.1s ease-out;
+					}
+					li a:hover {
+						text-decoration: none;
+						background:#fff;
+						color: #009ADD;
+					}
+				}
+			}
+			&> li:hover .sub-menu {
+				display:block;
 			}
 		}
 	}
@@ -572,12 +599,15 @@ header#header {
 			z-index:100;
 			position:relative;
 			margin-top:100px;
+			border-top: 1px solid;
 
 			&> li {
-				margin-top:25px;
+				padding-top:14px;
+				padding-bottom:12px;
+			    border-bottom: 1px solid #ccc;
 
 				&> a {
-					margin:5px 30px;
+					margin:11px 30px;
 					padding:8px 0;
 
 					font-size: 18px;
@@ -588,6 +618,16 @@ header#header {
 
 					&:hover {
 						background:none;
+					}
+				}
+
+				&> .sub-menu {
+					text-transform: uppercase;
+					padding-left: 60px;
+
+					li a {
+						padding: 13px 0px;
+    					display: block;
 					}
 				}
 			}
